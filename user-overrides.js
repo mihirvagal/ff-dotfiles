@@ -24,3 +24,10 @@ user_pref("browser.privatebrowsing.autostart", false)
 
 // enable favicons in history and bookmarks
 user_pref("browser.chrome.site_icons", true)
+
+// enable cache storage
+user_pref("browser.cache.dish.enable", true)
+user_pref("broser.sessionstore.privacy_level", 0)
+
+// enable session restore after reboot
+user_pref("toolkit.winRegisterApplicationRestart", true)
