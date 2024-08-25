@@ -1,31 +1,63 @@
+// https://github.com/arkenfox/user.js/wiki/
+// https://github.com/mihirvagal/ff-dotfiles/
+
 // set browser startup page, newtabpage, and homepage to about:home
 user_pref("browser.startup.page", 1);
 user_pref("browser.startup.homepage", "about:home");
 user_pref("browser.newtabpage.enabled", true);
 
-// enable geolocation services
+// Enable geolocation services
 user_pref("geo.provider.ms-windows-location", true); // [WINDOWS]
 
-// custom DoH provides
-user_pref("network.trr.uri", "https://dns.quad9.net/dns-query");
-user_pref("network.trr.custom_uri", "https://dns.quad9.net/dns-query");
-
-// enable disk cache
-user_pref("browser.cache.disk.enable", true);
-
-// enable HTTP background request
+// Enable HTTP background request
 user_pref("dom.security.https_only_mode_send_http_background_request", true);
 
-// not set FF in private browsing mode
-user_pref("browser.privatebrowsing.autostart", false);
-
-// enable favicons in history and bookmarks
+// Enable favicons in history and bookmarks
 user_pref("browser.chrome.site_icons", true);
 user_pref("browser.shell.shortcutFavicons", true);
 
-// enable cache storage
-user_pref("browser.cache.dish.enable", true);
+// Enable cache storage
+user_pref("browser.cache.disk.enable", true);
 user_pref("broser.sessionstore.privacy_level", 0);
 
-// enable session restore after reboot
+// DNS over HTTPS
+// Uses Quad9
+user_pref("network.trr.uri", "https://mozilla.cloudflare-dns.com/dns-query");
+user_pref("network.trr.mode", 2);
+
+// Enable session restore after reboot
 user_pref("toolkit.winRegisterApplicationRestart", true);
+
+// Disable safe browsing
+user_pref("browser.safebrowsing.malware.enabled", false);
+user_pref("browser.safebrowsing.phishing.enabled", false);
+user_pref("browser.safebrowsing.downloads.enabled", false);
+
+// Leave IPv6 enabled
+user_pref("network.dns.disableIPv6", false);
+
+// Re-enable search engines
+user_pref("keyword.enabled", true);
+
+// Enable Search Engine suggestion
+user_pref("browser.search.suggest.enabled", false);
+user_pref("browser.urlbar.suggest.searches", false);
+
+// Enable favicons, the icons in bookmarks
+user_pref("browser.shell.shortcutFavicons", true);
+
+// Disable auto-play
+user_pref("media.autoplay.default", 5);
+user_pref("media.autoplay.blocking_policy", 2);
+
+// Use Disconnect's blocklist to block ads
+user_pref("browser.contentblocking.category", "strict");
+
+// Delete cookies on close
+user_pref("network.cookie.lifetimePolicy", 2);
+
+// Disable password manager
+user_pref("signon.rememberSignons", false);
+
+// Disable Pocket
+user_pref("extensions.pocket.enabled", false);
